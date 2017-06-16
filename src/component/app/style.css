@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+.header {
+    max-height: 70px;
+    flex-basis: 70px;
+    width: 100%;
+}
+.content {
+    flex-basis: 70px;
+    flex-grow: 1;
+    position: relative;
+}

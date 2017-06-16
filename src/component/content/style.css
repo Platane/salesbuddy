@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+.leftPanel {
+    flex-basis: 100px;
+    max-width: 200px;
+    flex-grow: 1;
+    position: relative;
+}
+.main {
+    flex-basis: 100px;
+    flex-grow: 1;
+    position: relative;
+}

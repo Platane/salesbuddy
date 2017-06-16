@@ -1,0 +1,9 @@
+{
+    "clients" : [
+        {
+            "avatar_url" : "aa",
+            "name": "Sandra Kim",
+            "age": 28
+        }
+    ]
+}
