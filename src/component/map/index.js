@@ -57,19 +57,21 @@ export const Map = ({
 
         {lines.map(path => <path key={path} d={path} className={style.line} />)}
 
-        {visitors.map((visitor, i) =>
-            <g
-                key={i}
-                transform={`translate(${positions[i].x},${positions[i].y})`}
-                onClick={() => selectVisitor(visitor.id_user)}
-            >
-                <Visitor
-                    size={visitor.id_user === selectedVisitorId ? 40 : 30}
-                    selected={visitor.id_user === selectedVisitorId}
-                    {...visitor}
-                />
-            </g>
-        )}
+        {visitors
+            .sort((a, b) => (a.id_user == selectedVisitorId ? 1 : -1))
+            .map((visitor, i) =>
+                <g
+                    key={i}
+                    transform={`translate(${positions[i].x},${positions[i].y})`}
+                    onClick={() => selectVisitor(visitor.id_user)}
+                >
+                    <Visitor
+                        size={visitor.id_user === selectedVisitorId ? 60 : 30}
+                        selected={visitor.id_user === selectedVisitorId}
+                        {...visitor}
+                    />
+                </g>
+            )}
 
     </svg>;
 
