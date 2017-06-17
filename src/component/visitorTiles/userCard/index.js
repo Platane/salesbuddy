@@ -22,6 +22,7 @@ export const UserCard = ({ profile_pic, first_name, last_name }) =>
 
         <div className={style.map}>
             <div className={style.mapW}>
+                <div className={style.mapShadow} />
                 <div className={style.mapW2}>
                     <Map />
                 </div>

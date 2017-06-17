@@ -57,3 +57,15 @@
 .mapW2:hover {
     transform: rotate(8deg) scale(1.6) translate(10px, -21px);
 }
+.mapShadow {
+    position: absolute;
+    background-image: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    left: 0;
+}
