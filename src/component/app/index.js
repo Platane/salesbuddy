@@ -12,5 +12,4 @@ export const App = () =>
         <div className={style.content}>
             <Content />
         </div>
-        <div className={style.footer} />
     </div>;
