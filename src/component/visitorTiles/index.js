@@ -22,6 +22,33 @@ const Tile = props =>
 
 const moodLabel = ['happy', 'neutral', 'sad'];
 
+const SearchRow = ({ search }) =>
+    <Row label="Search">
+
+        {search.category &&
+            <Tile size={4} label="Research">
+                <IconCard icon={search.category} label={search.category} />
+            </Tile>}
+
+        {search.transport &&
+            <Tile size={4} label="Format">
+                <IconCard icon={search.transport} label={search.transport} />
+            </Tile>}
+
+        {search.utilisation &&
+            <Tile size={4} label="Usage">
+                <IconCard
+                    icon={search.utilisation}
+                    label={search.utilisation}
+                />
+            </Tile>}
+
+        {search.budget &&
+            <Tile size={4} label="Budget">
+                <PriceCard price={search.budget} />
+            </Tile>}
+    </Row>;
+
 export const VisitorTiles_ = ({ visitor }) =>
     <div className={style.container}>
 
@@ -43,45 +70,11 @@ export const VisitorTiles_ = ({ visitor }) =>
             </Tile>
         </Row>
 
-        {visitor.search &&
-            <Row label="Search">
-
-                {visitor.search.category &&
-                    <Tile size={4} label="Research">
-                        <IconCard
-                            icon={visitor.search.category}
-                            label={visitor.search.category}
-                        />
-                    </Tile>}
-
-                {visitor.search.type2 &&
-                    <Tile size={4} label="Format">
-                        <IconCard
-                            icon={visitor.search.type2}
-                            label={visitor.search.type2}
-                        />
-                    </Tile>}
-
-                {visitor.search.location &&
-                    visitor.search.location.category &&
-                    <Tile size={4} label="Usage">
-                        <IconCard
-                            icon={
-                                visitor.search.location &&
-                                visitor.search.location.category
-                            }
-                            label={
-                                visitor.search.location &&
-                                visitor.search.location.category
-                            }
-                        />
-                    </Tile>}
-
-                {visitor.search.price &&
-                    <Tile size={4} label="Budget">
-                        <PriceCard price={visitor.search.price} />
-                    </Tile>}
-            </Row>}
+        {visitor.searches &&
+            visitor.searches[0] &&
+            <SearchRow
+                search={visitor.searches[visitor.searches.length - 1]}
+            />}
 
         {(visitor.matching_products || []).map((product, i) =>
             <Row

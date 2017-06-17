@@ -34,7 +34,10 @@ export const reduce = (state, action) => {
 
     state = {
         ...state,
-        selectedVisitorId: (state.users[0] && state.users[0].id_user) || null,
+        selectedVisitorId:
+            state.selectedVisitorId ||
+                (state.users[0] && state.users[0].id_user) ||
+                null,
     };
 
     return state;
