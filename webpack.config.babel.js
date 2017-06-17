@@ -25,14 +25,24 @@ module.exports = {
             },
 
             {
-                test: /\.(eot|ttf|woff|otf|woff2|svg|gif|jpg|png|html)$/,
+                test: /\.html$/,
                 use: [
                     {
                         loader: 'file-loader',
                         options: {
-                            name: production
-                                ? '[hash:6]'
-                                : '[path][name]---[local]',
+                            name: '[name].[ext]',
+                        },
+                    },
+                ],
+            },
+
+            {
+                test: /\.(eot|ttf|woff|otf|woff2|svg|gif|jpg|png)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[hash:6].[ext]',
                         },
                     },
                 ],
