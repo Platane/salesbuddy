@@ -27,12 +27,12 @@ export const VerticalVisitorList = ({
     <div className={style.container}>
         {visitors.map(visitor =>
             <Visitor
-                key={visitor.sender_id}
+                key={visitor.id_user}
                 name={`${visitor.first_name} ${visitor.last_name}`}
                 profile_pic={visitor.profile_pic}
                 mood={visitor.search && visitor.search.emotion}
-                onClick={() => selectVisitor(visitor.sender_id)}
-                selected={visitor.sender_id === selectedVisitorId}
+                onClick={() => selectVisitor(visitor.id_user)}
+                selected={visitor.id_user === selectedVisitorId}
             />
         )}
     </div>;

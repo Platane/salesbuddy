@@ -6,7 +6,7 @@ import { VisitorTiles as C } from './index';
 
 const mapStateToProps = state => ({
     visitor:
-        state.users.find(user => user.sender_id === state.selectedVisitorId) ||
+        state.users.find(user => user.id_user === state.selectedVisitorId) ||
             null,
 });
 

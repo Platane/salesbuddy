@@ -84,8 +84,13 @@ export const VisitorTiles_ = ({ visitor }) =>
             </Row>}
 
         {(visitor.matching_products || []).map((product, i) =>
-            <Row key={i} label={i == 0 ? 'Recommandations' : ''}>
-                <ProductCard {...product} />
+            <Row
+                key={product.id_product}
+                label={i == 0 ? 'Recommandations' : ''}
+            >
+                <Tile size={1}>
+                    <ProductCard {...product} />
+                </Tile>
             </Row>
         )}
     </div>;

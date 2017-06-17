@@ -2,7 +2,7 @@ const first_name = 'paul jim theo ludovik tim'.split(' ');
 const last_name = 'paul jim theo ludovik tim'.split(' ');
 
 const user = () => ({
-    sender_id: Math.random().toString(16),
+    id_user: Math.random().toString(16),
     first_name: first_name[Math.floor(Math.random() * first_name.length)],
     last_name: first_name[Math.floor(Math.random() * last_name.length)],
     gender: 'm',
@@ -26,7 +26,83 @@ const user = () => ({
         taken_by: null,
         open: true,
     },
-    matching_products: [],
+    matching_products: [
+        {
+            id_product: 61,
+            location: '1',
+            category: 'speaker',
+            transport: 'fixe',
+            utilisation: 'music',
+            price: '549,99',
+            budget: '500-1000',
+            product_name: 'Enceinte Bluetooth Marshall Woburn Black',
+            brand: 'Marshall',
+            img_url:
+                'http://static.fnac-static.com/multimedia/Images/FR/NR/8c/48/60/6310028/1505-1/tsp20140926112403/Enceinte-Bluetooth-Marshall-Woburn-Black.jpg',
+            desc: '',
+            rate: 4,
+        },
+        {
+            id_product: 62,
+            location: '1',
+            category: 'speaker',
+            transport: 'fixe',
+            utilisation: 'music',
+            price: '549,99',
+            budget: '500-1000',
+            product_name: 'Enceinte Bluetooth Marshall Woburn Black',
+            brand: 'beats',
+            img_url:
+                'http://static.fnac-static.com/multimedia/Images/FR/NR/8c/48/60/6310028/1505-1/tsp20140926112403/Enceinte-Bluetooth-Marshall-Woburn-Black.jpg',
+            desc: '',
+            rate: 4,
+        },
+        {
+            id_product: 63,
+            location: '1',
+            category: 'speaker',
+            transport: 'fixe',
+            utilisation: 'music',
+            price: '549,99',
+            budget: '500-1000',
+            product_name: 'Enceinte Bluetooth Marshall Woburn Black',
+            brand: 'b&o',
+            img_url:
+                'http://static.fnac-static.com/multimedia/Images/FR/NR/8c/48/60/6310028/1505-1/tsp20140926112403/Enceinte-Bluetooth-Marshall-Woburn-Black.jpg',
+            desc: '',
+            rate: 4,
+        },
+        {
+            id_product: 64,
+            location: '1',
+            category: 'speaker',
+            transport: 'fixe',
+            utilisation: 'music',
+            price: '549,99',
+            budget: '500-1000',
+            product_name: 'Enceinte Bluetooth Marshall Woburn Black',
+            brand: 'lg',
+            img_url:
+                'http://static.fnac-static.com/multimedia/Images/FR/NR/8c/48/60/6310028/1505-1/tsp20140926112403/Enceinte-Bluetooth-Marshall-Woburn-Black.jpg',
+            desc: '',
+            rate: 0,
+        },
+        {
+            id_product: 65,
+            location: '1',
+            category: 'speaker',
+            transport: 'fixe',
+            utilisation: 'music',
+            price: '549,99',
+            budget: '500-1000',
+            product_name: 'Enceinte Bluetooth Marshall Woburn Black',
+            brand: 'harman',
+            img_url:
+                'http://static.fnac-static.com/multimedia/Images/FR/NR/8c/48/60/6310028/1505-1/tsp20140926112403/Enceinte-Bluetooth-Marshall-Woburn-Black.jpg',
+            desc: '',
+            rate: 0,
+        },
+    ],
 });
 
 export const users = Array.from({ length: 10 }, user);
