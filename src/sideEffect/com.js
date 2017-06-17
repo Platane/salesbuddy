@@ -48,5 +48,16 @@ export const init = store => {
         };
 
         loop();
+
+        let previous_selectedVisitorId;
+        store.subscribe(() => {
+            const { selectedVisitorId } = store.getState();
+
+            if (previous_selectedVisitorId != selectedVisitorId) {
+                previous_selectedVisitorId = selectedVisitorId;
+
+                loop();
+            }
+        });
     }
 };
