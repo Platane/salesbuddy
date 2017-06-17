@@ -38,3 +38,7 @@
     background-size: cover;
     background-image: url(../../asset/avatar_2.png);
 }
+.contentToggle {
+    margin-right: 20px;
+    cursor: pointer;
+}

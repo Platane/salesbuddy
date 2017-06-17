@@ -1,6 +1,6 @@
 import React from 'react';
-import { Header } from '../header';
-import { Content } from '../content';
+import { Header } from '../header/connected';
+import { Content } from '../content/connected';
 
 import style from './style.css';
 

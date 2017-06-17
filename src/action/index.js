@@ -10,3 +10,8 @@ export const selectVisitor = visitorId => ({
     type: 'selectVisitor',
     visitorId,
 });
+
+export const setMainContent = mainContent => ({
+    type: 'setMainContent',
+    mainContent,
+});

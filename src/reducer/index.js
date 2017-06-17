@@ -1,5 +1,5 @@
 export const reduce = (state, action) => {
-    state = state || { users: [], selectedVisitorId: null };
+    state = state || { users: [], selectedVisitorId: null, mainContent: 'map' };
 
     switch (action.type) {
         case 'hydrateUsers':
@@ -28,7 +28,15 @@ export const reduce = (state, action) => {
             break;
 
         case 'selectVisitor':
-            state = { ...state, selectedVisitorId: action.visitorId };
+            state = {
+                ...state,
+                selectedVisitorId: action.visitorId,
+                mainContent: 'profil',
+            };
+            break;
+
+        case 'setMainContent':
+            state = { ...state, mainContent: action.mainContent };
             break;
     }
 
