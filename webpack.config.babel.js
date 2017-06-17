@@ -30,7 +30,9 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: '[name].[ext]',
+                            name: production
+                                ? '[hash:6]'
+                                : '[path][name]---[local]',
                         },
                     },
                 ],

@@ -21,6 +21,7 @@ const search = () => ({
     category: 'speaker',
     transport: ['fixe', 'transportable', null][Math.floor(Math.random() * 3)],
     utilisation: ['music', 'movie', 'both'][Math.floor(Math.random() * 3)],
+    location: ['speaker', 'tv', 'book'][Math.floor(Math.random() * 3)],
     budget: [
         Math.floor(Math.random() * 100),
         Math.floor(Math.random() * 100) + 100,
@@ -44,4 +45,4 @@ const user = () => ({
     matching_products: Array.from({ length: 10 }, product),
 });
 
-export const users = Array.from({ length: 10 }, user);
+export const users = Array.from({ length: 30 }, user);

@@ -26,6 +26,54 @@ const Visitor = ({ id_user, profile_pic, selected, size = 40 }) =>
         />
     </g>;
 
+const positions = [
+    Array.from({ length: 50 }).map(() => {
+        const r = Math.random() * 30;
+        const a = Math.random() * Math.PI * 2;
+
+        return {
+            x: 155 + Math.cos(a) * r,
+            y: 410 + Math.sin(a) * r * 3,
+        };
+    }),
+    Array.from({ length: 50 }).map(() => {
+        const r = Math.random() * 30;
+        const a = Math.random() * Math.PI * 2;
+
+        return {
+            x: 285 + Math.cos(a) * r,
+            y: 190 + Math.sin(a) * r * 3,
+        };
+    }),
+    Array.from({ length: 50 }).map(() => {
+        const r = Math.random() * 60;
+        const a = Math.random() * Math.PI * 2;
+
+        return {
+            x: 145 + Math.cos(a) * r * 1.3,
+            y: 210 + Math.sin(a) * r,
+        };
+    }),
+];
+
+const extractSearch = ({ searches }) =>
+    (searches && searches[searches.length - 1]) || null;
+
+const transform = ({ searches, id_user }, i) => {
+    const search = searches && searches[searches.length - 1];
+
+    const u = { speaker: 0, tv: 1, book: 2 }[search && search.location] || 0;
+
+    let k = 0;
+    try {
+        k = parseInt(id_user);
+    } catch (err) {}
+
+    const pos = positions[u][i % 30];
+
+    return `translate(${pos.x},${pos.y})`;
+};
+
 export const Map = ({
     visitors,
     positions,
@@ -63,7 +111,7 @@ export const Map = ({
             .map((visitor, i) =>
                 <g
                     key={i}
-                    transform={`translate(${positions[i].x},${positions[i].y})`}
+                    transform={transform(visitor, i)}
                     onClick={() => selectVisitor(visitor.id_user)}
                 >
                     <Visitor
