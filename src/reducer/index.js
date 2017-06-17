@@ -48,5 +48,11 @@ export const reduce = (state, action) => {
                 null,
     };
 
+    if ('map' === state.mainContent)
+        state = {
+            ...state,
+            selectedVisitorId: null,
+        };
+
     return state;
 };

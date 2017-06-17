@@ -24,7 +24,7 @@ export const Header = ({ mainContent, setMainContent }) =>
                         )}
                 >
                     <Icon
-                        size={30}
+                        size={26}
                         color="#fff"
                         icon={mainContent === 'map' ? 'user' : 'mapTic'}
                     />

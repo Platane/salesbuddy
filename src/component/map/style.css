@@ -19,11 +19,13 @@
     transition: fill 300ms ease, stroke 300ms ease;
 }
 .region:hover {
-    fill: rgba(255, 103, 0, 0.1);
+    fill: rgba(255, 103, 0, 0.2);
     stroke: #ff6700;
     stroke-width: 2;
 }
-
+.visitor {
+    cursor: pointer;
+}
 .grid {
     fill: none;
     stroke: #ddd;

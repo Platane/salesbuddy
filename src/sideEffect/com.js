@@ -3,7 +3,7 @@ import { hydrateUsers, hydrateUserProduct } from '../action';
 import { users } from './__fixture__/users';
 
 export const init = store => {
-    return store.dispatch(hydrateUsers(users));
+    // return store.dispatch(hydrateUsers(users));
 
     // polling for all visitors
     {

@@ -4,35 +4,69 @@ import style from './style.css';
 
 import { floor, regions, lines } from './zone';
 
-const Visitor = ({ profile_pic, selected }) =>
+const Visitor = ({ id_user, profile_pic, selected, size = 40 }) =>
     <g
         className={
             style.visitor + ' ' + (selected ? style.visitorSelected : '')
         }
     >
-        <circle cx={0} cy={0} r={2} fill="black" />
+        <defs>
+            <clipPath id={id_user}>
+                <circle cx={0} cy={0} r={size / 2} fill="black" />
+            </clipPath>
+        </defs>
+        <circle cx={0} cy={0} r={size / 2 * 1.2} fill="#fff" />
+        <image
+            xLinkHref={profile_pic}
+            xlinkHref={profile_pic}
+            x={-size / 2}
+            y={-size / 2}
+            height={size}
+            width={size}
+            clipPath={`url(#${id_user})`}
+        />
     </g>;
 
-export const Map = ({ visitors, positions, selectedVisitorId }) =>
+export const Map = ({
+    visitors,
+    positions,
+    selectedVisitorId,
+    selectVisitor,
+}) =>
     <svg viewBox="0 0 490 540" className={style.container}>
 
         {Array.from({ length: 40 }).map((_, i) =>
-            <path d={`M-500 ${30 * i - 300} H1000`} className={style.grid} />
+            <path
+                key={i}
+                d={`M-500 ${30 * i - 300} H1000`}
+                className={style.grid}
+            />
         )}
         {Array.from({ length: 40 }).map((_, i) =>
-            <path d={`M${30 * i - 300} -500 V1000`} className={style.grid} />
+            <path
+                key={i}
+                d={`M${30 * i - 300} -500 V1000`}
+                className={style.grid}
+            />
         )}
 
         <path d={floor} className={style.floor} />
 
-        {regions.map(path => <path d={path} className={style.region} />)}
+        {regions.map(path =>
+            <path key={path} d={path} className={style.region} />
+        )}
 
-        {lines.map(path => <path d={path} className={style.line} />)}
+        {lines.map(path => <path key={path} d={path} className={style.line} />)}
 
         {visitors.map((visitor, i) =>
-            <g transform={`translate(${positions[i].x},${positions[i].y})`}>
+            <g
+                key={i}
+                transform={`translate(${positions[i].x},${positions[i].y})`}
+                onClick={() => selectVisitor(visitor.id_user)}
+            >
                 <Visitor
-                    selected={visitor.id === selectedVisitorId}
+                    size={visitor.id_user === selectedVisitorId ? 40 : 30}
+                    selected={visitor.id_user === selectedVisitorId}
                     {...visitor}
                 />
             </g>
