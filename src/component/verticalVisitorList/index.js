@@ -4,25 +4,24 @@ import style from './style.css';
 
 import { Mood } from '../mood';
 
-const Visitor = ({ name, avatar_url, mood }) =>
+const Visitor = ({ name, profile_pic, mood }) =>
     <div className={style.visitor}>
         <div
             className={style.visitorPic}
-            style={{ backgroundImage: `url(${avatar_url})` }}
+            style={{ backgroundImage: `url(${profile_pic})` }}
         />
         <div className={style.visitorName}>{name}</div>
-        <div className={style.visitorMood}><Mood size={30} mood={mood} /></div>
+        <div className={style.visitorMood}><Mood size={24} mood={mood} /></div>
     </div>;
 
 export const VerticalVisitorList = ({ visitors }) =>
     <div className={style.container}>
-        {(visitors || [0, 0, 0, 0])
-            .map((visitor, i) =>
-                <Visitor
-                    key={i}
-                    name="lea"
-                    avatar_url="http://25.media.tumblr.com/tumblr_lzcdj8TjeQ1qamec9o1_1280.jpg"
-                    mood="okIGuess"
-                />
-            )}
+        {visitors.map(visitor =>
+            <Visitor
+                key={visitor.sender_id}
+                name={`${visitor.firstname} ${visitor.lastname}`}
+                profile_pic={visitor.profile_pic}
+                mood={visitor.search && visitor.search.emotion}
+            />
+        )}
     </div>;

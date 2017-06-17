@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { reduce } from './reducer';
 import { init as initUi } from './sideEffect/ui';
+import { init as initCom } from './sideEffect/com';
 
 // create redux store
 const crashReporter = store => next => action => {
@@ -22,4 +23,4 @@ const enhancers = [
 const store = createStore(reduce, compose(...enhancers));
 
 // init side effects
-[initUi].forEach(init => init(store));
+[initUi, initCom].forEach(init => init(store));

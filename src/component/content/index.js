@@ -2,7 +2,7 @@ import React from 'react';
 
 import style from './style.css';
 
-import { VerticalVisitorList } from '../verticalVisitorList';
+import { VerticalVisitorList } from '../verticalVisitorList/connected';
 import { VisitorTiles } from '../visitorTiles';
 
 export const Content = () =>

@@ -1,12 +1,21 @@
 .container {
-    background-color: red;
+    background-color: #ff6700;
     width: 100%;
-    height: 100%;
+    height: 100px;
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
 }
 .right {
     margin-left: auto;
     display: flex;
     flex-direction: row;
+}
+.logo {
+    background-image: url(../../asset/logo.png);
+    background-size: 228px 49px;
+    background-repeat: no-repeat;
+    width: 228px;
+    height: 49px;
+    margin-left: 20px;
 }

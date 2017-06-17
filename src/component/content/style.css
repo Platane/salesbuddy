@@ -4,12 +4,15 @@
 }
 .leftPanel {
     flex-basis: 100px;
-    max-width: 200px;
+    max-width: 260px;
     flex-grow: 1;
     position: relative;
+    background-color: #ffffff;
+    border-left: solid 1px #cacaca;
 }
 .main {
     flex-basis: 100px;
     flex-grow: 1;
     position: relative;
+    background-color: #f1f1f1;
 }
