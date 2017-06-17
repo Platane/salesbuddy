@@ -9,10 +9,12 @@
     position: relative;
     background-color: #ffffff;
     border-left: solid 1px #cacaca;
+    overflow-y: scroll;
 }
 .main {
     flex-basis: 100px;
     flex-grow: 1;
     position: relative;
     background-color: #f1f1f1;
+    overflow-y: scroll;
 }
