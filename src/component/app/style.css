@@ -24,11 +24,8 @@
     background-color: #ff6700;
 }
 
-body: {
-    margin: 0;
-}
-:global {
-    body: {
-        margin: 0;
-    }
+@font-face {
+    font-family: "proxima";
+    src: url(../../asset/font/ProximaNova-Reg.otf) format('woff'),
+        url(../../asset/font/proxima-nova-black.ttf) format('truetype');
 }
