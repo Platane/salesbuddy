@@ -13,9 +13,12 @@ const user = () => ({
             category: 'audio',
         },
         usage: 'home',
-        price: '100-150',
-        type: 'enceinte',
-        type2: 'fixe',
+        price: [
+            Math.floor(Math.random() * 100),
+            Math.floor(Math.random() * 100) + 100,
+        ].join('-'),
+        type: 'speaker',
+        type2: 'portableSpeaker',
         emotion: Math.floor(Math.random() * 3).toString(),
     },
     status: {
