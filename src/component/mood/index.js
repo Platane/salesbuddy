@@ -62,12 +62,12 @@ const Sad = ({ size }) =>
     </svg>;
 
 export const Mood = props => {
-    switch (props.mood) {
-        case '0':
-            return <Happy {...props} />;
+    switch (props.mood && '' + props.mood) {
         case '1':
-            return <Neutral {...props} />;
+            return <Happy {...props} />;
         case '2':
+            return <Neutral {...props} />;
+        case '3':
             return <Sad {...props} />;
         default:
             return <FaceLess {...props} />;

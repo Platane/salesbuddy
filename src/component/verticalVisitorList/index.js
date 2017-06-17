@@ -19,6 +19,9 @@ const Visitor = ({ name, profile_pic, mood, selected, onClick }) =>
         <div className={style.visitorMood}><Mood size={24} mood={mood} /></div>
     </div>;
 
+const extractSearch = ({ searches }) =>
+    (searches && searches[searches.length - 1]) || null;
+
 export const VerticalVisitorList = ({
     visitors,
     selectedVisitorId,
@@ -30,7 +33,7 @@ export const VerticalVisitorList = ({
                 key={visitor.id_user}
                 name={`${visitor.first_name} ${visitor.last_name}`}
                 profile_pic={visitor.profile_pic}
-                mood={visitor.search && visitor.search.emotion}
+                mood={(extractSearch(visitor) || {}).emotion}
                 onClick={() => selectVisitor(visitor.id_user)}
                 selected={visitor.id_user === selectedVisitorId}
             />

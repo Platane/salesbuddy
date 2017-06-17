@@ -12,12 +12,14 @@ export const UserCard = ({ profile_pic, first_name, last_name }) =>
                 style={{ backgroundImage: `url(${profile_pic})` }}
             />
         </div>
+
         <div className={style.right}>
             <div className={style.content}>
                 <div className={style.label}>Name</div>
                 <div className={style.name}>{`${first_name} ${last_name}`}</div>
             </div>
         </div>
+
         <div className={style.map}>
             <div className={style.mapW}>
                 <div className={style.mapW2}>

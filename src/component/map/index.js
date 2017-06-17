@@ -58,6 +58,7 @@ export const Map = ({
         {lines.map(path => <path key={path} d={path} className={style.line} />)}
 
         {visitors
+            .slice()
             .sort((a, b) => (a.id_user == selectedVisitorId ? 1 : -1))
             .map((visitor, i) =>
                 <g
@@ -66,7 +67,7 @@ export const Map = ({
                     onClick={() => selectVisitor(visitor.id_user)}
                 >
                     <Visitor
-                        size={visitor.id_user === selectedVisitorId ? 60 : 30}
+                        size={visitor.id_user === selectedVisitorId ? 65 : 30}
                         selected={visitor.id_user === selectedVisitorId}
                         {...visitor}
                     />

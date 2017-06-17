@@ -49,6 +49,9 @@ const SearchRow = ({ search }) =>
             </Tile>}
     </Row>;
 
+const extractSearch = ({ searches }) =>
+    (searches && searches[searches.length - 1]) || null;
+
 export const VisitorTiles_ = ({ visitor }) =>
     <div className={style.container}>
 
@@ -61,20 +64,17 @@ export const VisitorTiles_ = ({ visitor }) =>
             </Tile>
             <Tile size={4} label="Mood">
                 <IconCard
-                    mood={visitor.search && visitor.search.emotion}
+                    mood={(extractSearch(visitor) || {}).emotion}
                     label={
-                        moodLabel[visitor.search && visitor.search.emotion] ||
+                        moodLabel[(extractSearch(visitor) || {}).emotion] ||
                         null
                     }
                 />
             </Tile>
         </Row>
 
-        {visitor.searches &&
-            visitor.searches[0] &&
-            <SearchRow
-                search={visitor.searches[visitor.searches.length - 1]}
-            />}
+        {extractSearch(visitor) &&
+            <SearchRow search={extractSearch(visitor)} />}
 
         {(visitor.matching_products || []).map((product, i) =>
             <Row
