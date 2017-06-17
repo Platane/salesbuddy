@@ -17,7 +17,6 @@ const Visitor = ({ id_user, profile_pic, selected, size = 40 }) =>
         </defs>
         <circle cx={0} cy={0} r={size / 2 * 1.2} fill="#fff" />
         <image
-            xLinkHref={profile_pic}
             xlinkHref={profile_pic}
             x={-size / 2}
             y={-size / 2}

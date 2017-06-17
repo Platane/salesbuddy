@@ -25,6 +25,18 @@
 }
 .visitor {
     cursor: pointer;
+    animation-name: jump;
+    animation-duration: 300ms;
+    /*animation-iteration-count: infinite;*/
+    animation-timing-function: linear;
+}
+@keyframes jump {
+    0% {
+        opacity: 0;
+    }
+    , 100% {
+        opacity: 1;
+    }
 }
 .grid {
     fill: none;

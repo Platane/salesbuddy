@@ -1,4 +1,25 @@
 .container {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.no, .ok {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 2em;
+}
+.ok {
+    background-color: #ff6700;
+    color: #fff;
+}
+.no {
+    background-color: #c7c7cc;
 }
