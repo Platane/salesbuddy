@@ -20,7 +20,7 @@ const Tile = props =>
         <div className={style.tileContent}>{props.children}</div>
     </div>;
 
-const moodLabel = ['happy', 'neutral', 'sad'];
+const moodLabel = [null, 'happy', 'neutral', 'sad'];
 
 const SearchRow = ({ search }) =>
     <Row label="Search">
