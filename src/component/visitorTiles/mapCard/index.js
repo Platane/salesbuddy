@@ -2,7 +2,7 @@ import React from 'react';
 
 import style from './style.css';
 
-export const MapCard = ({ profile_pic, firstname, lastname }) =>
+export const MapCard = ({ profile_pic, first_name, last_name }) =>
     <div className={style.container}>
         <div className={style.left}>
             <div
@@ -13,7 +13,7 @@ export const MapCard = ({ profile_pic, firstname, lastname }) =>
         <div className={style.right}>
             <div className={style.content}>
                 <div className={style.label}>Name</div>
-                <div className={style.name}>{`${firstname} ${lastname}`}</div>
+                <div className={style.name}>{`${first_name} ${last_name}`}</div>
             </div>
         </div>
     </div>;

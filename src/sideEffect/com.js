@@ -8,11 +8,11 @@ export const init = store => {
     const loop = () => {
         clearTimeout(timeout);
 
-        store.dispatch(hydrate({ users }));
+        // store.dispatch(hydrate({ users }));
 
         fetch(config.endPoint)
             .then(res => res.json())
-            .then(data => store.dispatch(hydrate(data)))
+            .then(users => store.dispatch(hydrate({ users })))
             .catch(err => console.log(err))
             .then(() => (timeout = setTimeout(loop, config.pooling_delay)));
     };

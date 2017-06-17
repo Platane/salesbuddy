@@ -22,7 +22,7 @@ const Tile = props =>
 
 const moodLabel = ['happy', 'neutral', 'sad'];
 
-export const VisitorTiles = ({ visitor }) =>
+export const VisitorTiles_ = ({ visitor }) =>
     <div className={style.container}>
 
         <Row label="Profil">
@@ -45,27 +45,42 @@ export const VisitorTiles = ({ visitor }) =>
 
         {visitor.search &&
             <Row label="Search">
-                <Tile size={4} label="Research">
-                    <IconCard
-                        icon={visitor.search.type}
-                        label={visitor.search.type}
-                    />
-                </Tile>
-                <Tile size={4} label="Format">
-                    <IconCard
-                        icon={visitor.search.type2}
-                        label={visitor.search.type2}
-                    />
-                </Tile>
-                <Tile size={4} label="Usage">
-                    <IconCard
-                        icon={visitor.search.location.category}
-                        label={visitor.search.location.category}
-                    />
-                </Tile>
-                <Tile size={4} label="Budget">
-                    <PriceCard price={visitor.search.price} />
-                </Tile>
+
+                {visitor.search.category &&
+                    <Tile size={4} label="Research">
+                        <IconCard
+                            icon={visitor.search.category}
+                            label={visitor.search.category}
+                        />
+                    </Tile>}
+
+                {visitor.search.type2 &&
+                    <Tile size={4} label="Format">
+                        <IconCard
+                            icon={visitor.search.type2}
+                            label={visitor.search.type2}
+                        />
+                    </Tile>}
+
+                {visitor.search.location &&
+                    visitor.search.location.category &&
+                    <Tile size={4} label="Usage">
+                        <IconCard
+                            icon={
+                                visitor.search.location &&
+                                visitor.search.location.category
+                            }
+                            label={
+                                visitor.search.location &&
+                                visitor.search.location.category
+                            }
+                        />
+                    </Tile>}
+
+                {visitor.search.price &&
+                    <Tile size={4} label="Budget">
+                        <PriceCard price={visitor.search.price} />
+                    </Tile>}
             </Row>}
 
         {(visitor.matching_products || []).map((product, i) =>
@@ -74,3 +89,6 @@ export const VisitorTiles = ({ visitor }) =>
             </Row>
         )}
     </div>;
+
+export const VisitorTiles = props =>
+    props.visitor ? <VisitorTiles_ {...props} /> : null;

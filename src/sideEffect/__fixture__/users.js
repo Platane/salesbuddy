@@ -1,10 +1,10 @@
-const firstName = 'paul jim theo ludovik tim'.split(' ');
-const lastName = 'paul jim theo ludovik tim'.split(' ');
+const first_name = 'paul jim theo ludovik tim'.split(' ');
+const last_name = 'paul jim theo ludovik tim'.split(' ');
 
 const user = () => ({
     sender_id: Math.random().toString(16),
-    firstname: firstName[Math.floor(Math.random() * firstName.length)],
-    lastname: firstName[Math.floor(Math.random() * lastName.length)],
+    first_name: first_name[Math.floor(Math.random() * first_name.length)],
+    last_name: first_name[Math.floor(Math.random() * last_name.length)],
     gender: 'm',
     profile_pic:
         'http://25.media.tumblr.com/tumblr_lzcdj8TjeQ1qamec9o1_1280.jpg',
@@ -17,7 +17,7 @@ const user = () => ({
             Math.floor(Math.random() * 100),
             Math.floor(Math.random() * 100) + 100,
         ].join('-'),
-        type: 'speaker',
+        category: 'speaker',
         type2: 'portableSpeaker',
         emotion: Math.floor(Math.random() * 3).toString(),
     },

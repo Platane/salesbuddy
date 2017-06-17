@@ -2,7 +2,7 @@ import React from 'react';
 
 import style from './style.css';
 
-export const StatusCard = ({ profile_pic, firstname, lastname }) =>
+export const StatusCard = ({ profile_pic, first_name, last_name }) =>
     <div className={style.container}>
         <div
             className={style.pic}

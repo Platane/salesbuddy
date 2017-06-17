@@ -1,4 +1,4 @@
 export const com = {
-    endPoint: 'http://localhost:8082/',
-    pooling_delay: 2000,
+    endPoint: 'https://63f22805.ngrok.io/users',
+    pooling_delay: 4000,
 };

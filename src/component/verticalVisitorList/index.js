@@ -28,7 +28,7 @@ export const VerticalVisitorList = ({
         {visitors.map(visitor =>
             <Visitor
                 key={visitor.sender_id}
-                name={`${visitor.firstname} ${visitor.lastname}`}
+                name={`${visitor.first_name} ${visitor.last_name}`}
                 profile_pic={visitor.profile_pic}
                 mood={visitor.search && visitor.search.emotion}
                 onClick={() => selectVisitor(visitor.sender_id)}
