@@ -8,11 +8,11 @@ export const PriceCard = ({ price }) => {
     return (
         <div className={style.container}>
             <div className={style.min}>
-                {min + ''}
+                {min + '€'}
             </div>
             <div className={style.separator}>-</div>
             <div className={style.max}>
-                {max + ''}
+                {max + '€'}
             </div>
         </div>
     );
