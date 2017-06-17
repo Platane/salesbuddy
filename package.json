@@ -32,6 +32,6 @@
     },
     "scripts": {
         "start": "webpack-dev-server --port 8082 --inline --devtool source-map --content-base ./ -d",
-        "build": "env NODE_ENV=production webpack --production"
+        "build": "env NODE_ENV=production webpack"
     }
 }

@@ -2,5 +2,5 @@ image: node:8
 
 all_tests:
   script:
-   - npm install
+   - npm install --quiet
    - npm run build
