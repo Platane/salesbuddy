@@ -16,6 +16,8 @@ The application connect to facebook messenger.
 
 It can understand client insights as well as emotions using luis.ai.
 
+This repository is the backoffice dashboard, [a demo is available](https://platane.github.io/salesbuddy/)
+
 # About
 
 This is a ten members team project made in 23 hours for the vivatech hackathon 2017.
