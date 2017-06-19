@@ -10,6 +10,8 @@
 
 The client scan QR code in the shop to start talking to the bot. As he chat with him, salesbuddy can suggest products which fits the customer needs, detect customers emotions, notifies in site sales forces which relevant informations.
 
+[![demo video](https://platane.github.io/salesbuddy/play.jpg)](https://platane.github.io/salesbuddy/salesbuddy.webm)
+
 # Technologies
 
 The application connect to facebook messenger.
